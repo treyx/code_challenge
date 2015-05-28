@@ -4,7 +4,6 @@ RSpec.describe OrderMailer, type: :mailer do
   it "sends an email" do
     order = Order.create(user_id: User.first.id, item_id: Item.first)
     OrderMailer.order_email(order).deliver
-    binding.pry
 
     email = ActionMailer::Base.deliveries.last
 
