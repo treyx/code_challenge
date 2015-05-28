@@ -6,5 +6,9 @@
     <p>
       <%= @item.description %>
     </p>
+    <p>
+    <%= link_to "Add To Order", order_path, method: 'post', class: "btn btn-info pull-right" %>
+    </p>
+
   </div>
 </div>
