@@ -22,4 +22,5 @@ group :development, :test do
   gem "rspec-rails"
   gem "pry-rails"
   gem "awesome_print"
+  gem "launchy"
 end
