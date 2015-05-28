@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   resources :users,  only: [:index, :show]
 
   post "/orders/:id", to: "orders#create"
+
+  namespace :api do
+    namespace :v1 do
+      resources :favorites, only: [:create], defaults: { format: :json }
+    end
+  end
 end
