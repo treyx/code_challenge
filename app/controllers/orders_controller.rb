@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
   def create
     order = Order.new(user_id: User.first.id, item_id: params[:id])
     if order.save
+      OrderMailer.order_email(order).deliver
       flash[:notice] = "Your Order Has Been Submitted"
       redirect_to order_path(order)
     else
