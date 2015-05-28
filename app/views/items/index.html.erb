@@ -6,12 +6,16 @@
   </div>
   <div class="row"></div>
   <% @items.each do |item| %>
+  <div id="div-item-data" data-item-name="<%= item.name %>"
+       data-item-desc="<%= item.description %>"></div>
     <div class="col-sm-3">
       <h5><%= item.name %></h5>
+
       <%= link_to(image_tag(item.image_url), item_path(item)) %>
       <p>
         <%= item.description %>
       </p>
+      <a href="#" ng-click="addFavorite(<% item %>)">Add To Favorites</a>
     </div>
   <% end %>
 </div>
