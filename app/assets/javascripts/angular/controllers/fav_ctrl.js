@@ -10,7 +10,6 @@ app.controller("FavsCtrl", ["FavoriteService", "$scope", function(FavoriteServic
                 description:   div.getAttribute("data-item-desc")
     };
     FavoriteService.addFav(item.name).success(function(data){
-      console.log(data)
       $scope.favorites.push(data);
     });
   };
